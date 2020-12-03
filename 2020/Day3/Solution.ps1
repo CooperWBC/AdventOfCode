@@ -6,11 +6,11 @@ Clear-Host
 
 $Course = Get-Content -Path C:\bin\GitHub\AdventOfCode\2020\Day3\input.txt
 
-$POS_X = 0
-$POS_Y = 0
-
 $MAX_X = $Course[0].Length - 1 
 $MAX_Y = $Course.Count - 1 
+
+$POS_X = 0
+$POS_Y = 0
 
 $count_trees = 0
 
@@ -65,6 +65,7 @@ $Slopes | ForEach-Object {
 
     $POS_X = 0
     $POS_Y = 0
+    
     $count_trees = 0
 
     while ($POS_Y -lt $MAX_Y) {
@@ -87,9 +88,9 @@ $Slopes | ForEach-Object {
     $results += $count_trees
 }
 
-$solution = $results[0]
+$solution = 1
 
-$results[1..($results.Count-1)] | ForEach-Object {
+$results| ForEach-Object {
     $solution = $solution * $_
 }
 
