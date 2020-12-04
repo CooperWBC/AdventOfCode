@@ -18,12 +18,10 @@ $Passports | ForEach-Object {
         $Hash = @{}
         return
     }
-
     # Populate Hash
     $_.Split(" ") | ForEach-Object {
         $Hash.Add($_.Split(":")[0],$_.Split(":")[1])
-    }
-    
+    }   
 }
 
 # Store the final Hash (The gotcha of Day 4 Part 1)

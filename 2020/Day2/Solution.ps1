@@ -4,7 +4,7 @@ Clear-Host
 # Puzzle 1
 #
 
-$Passwords = Get-Content -Path .\input.txt
+$Passwords = Get-Content -Path .\Day2\input.txt
 
 $Passwords_Valid_1 = @()
 

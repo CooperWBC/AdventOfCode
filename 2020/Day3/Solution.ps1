@@ -4,7 +4,7 @@ Clear-Host
 # Puzzle 1
 #
 
-$Course = Get-Content -Path C:\bin\GitHub\AdventOfCode\2020\Day3\input.txt
+$Course = Get-Content -Path .\Day3\input.txt
 
 $MAX_X = $Course[0].Length - 1 
 $MAX_Y = $Course.Count - 1 
