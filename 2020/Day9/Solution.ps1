@@ -19,12 +19,34 @@ ForEach ($Number in $XMAS[$Index..$XMAS.Count]) {
         }
     }
     if(!$Pass) {
-        Write-Host "Deviant : $Number"
         break
     }
     $Index++
 }
 
+Write-Host "            Deviant : $Number"
+
 #
 # Puzzle 2
 #
+
+$Index = 0
+
+While ($true) {
+    $SUM = $XMAS[$Index]
+    $Index_Loop = $Index + 1
+    While ($SUM -lt $Number) {
+        $SUM = $SUM + $XMAS[$Index_Loop]
+        $Index_Loop++
+    }
+    if($SUM -eq $Number) {
+            Write-Host "     Sequence Start : $Index"
+            Write-Host "       Sequence End : $Index_Loop"
+            $MIN = $XMAS[$Index..$Index_Loop] | Sort-Object | Select-Object -First 1
+            $MAX = $XMAS[$Index..$Index_Loop] | Sort-Object | Select-Object -Last 1
+            break
+    }
+    $Index++
+}
+
+Write-Host "Encryption Weakness : $($MIN+$MAX)"
